@@ -19,6 +19,8 @@ limitations under the License.
 
 #define MY_BUFFSIZE            64
 #define MY_CIPHER_BLOCK_SIZE   16
+#define MY_AES_KEY_SIZE        128
+
 
 void MyMemSet(unsigned char *p, unsigned int t);
 void MyPrintBlock(const unsigned char *DataBlock, unsigned int BlockSize);
@@ -35,7 +37,7 @@ int main()
     MyMemSet(DecryptedDataBlock, sizeof(DecryptedDataBlock));
 
     // AESkey is a data structure holding a transformed version of the key, for efficiency.
-    AES_set_encrypt_key((const unsigned char *)UserKey, 128, &AESkey);
+    AES_set_encrypt_key((const unsigned char *)UserKey, MY_AES_KEY_SIZE, &AESkey);
 
 
     // AES is a block cipher, not really an encryption scheme.
@@ -48,7 +50,7 @@ int main()
     
     MyMemSet( (unsigned char *)(&AESkey), sizeof(AESkey));
     // We don't need the old AESkey values anymore, let us reuse it then. 
-    AES_set_decrypt_key((const unsigned char *)UserKey, 128, &AESkey);
+    AES_set_decrypt_key((const unsigned char *)UserKey, MY_AES_KEY_SIZE, &AESkey);
 
     // Computing the inverse of AES
     AES_decrypt((const unsigned char *)EncryptedDataBlock, DecryptedDataBlock, (const AES_KEY *)&AESkey);

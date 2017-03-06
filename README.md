@@ -5,7 +5,7 @@
 
 # Simple AES demo with a barebone AES C language source code. 
 
-This is a C language source program to demo the fundamental use of Advanced Encryption Standard (AES). This sample code encrypts and decrypts a single AES block of data by using AES218. The AES source code used in this is C language AES source code extracted from the latest OpenSSL library(openssl-1.1.0c.tar.gz).  
+This is a C language source program to demo the fundamental use of Advanced Encryption Standard (AES). This sample code encrypts and decrypts a single AES block of data by using AES128. The AES source code used in this is C language AES source code extracted from the latest OpenSSL library(openssl-1.1.0c.tar.gz).  
 
 The Advanced Encryption Standard (AES) is a specification for the encryption of electronic data established by the U.S. National Institute of Standards and Technology (NIST) in 2001. AES became effective as a USA federal government standard on May 26, 2002.  
 
